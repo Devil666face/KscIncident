@@ -8,7 +8,7 @@ if [ "$SSL"="3.0.2" ]; then
 else
 	TGZ_NAME+="1.1.1.tgz"
 fi
-echo $TGZ_NAME
+echo $SSL $TGZ_NAME
 tar -xf .dev/$TGZ_NAME
 ./python/bin/python3.11 -m venv venv
 ./venv/bin/pip install -r requirements.txt
