@@ -1,9 +1,10 @@
 import urllib3
 import socket
+import requests
 
 from utils.logger import logger as l
 
-from KlAkOAPI.AdmServer import KlAkAdmServer
+from KlAkOAPI.AdmServer import KlAkAdmServer, requests
 from KlAkOAPI.SrvView import KlAkSrvView
 from KlAkOAPI.Base import KlAkArray
 
@@ -30,7 +31,9 @@ class KscServer:
                 verify=False,
             )
         except ConnectionError as err:
-            l.exception(err)
+            l.error(f"Some connection error\n{err}")
+        except requests.exceptions.ConnectTimeout as err:
+            l.error(f"Error to connect {self.server_url}\n{err}")
 
     @property
     def events(self) -> None:

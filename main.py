@@ -2,8 +2,6 @@
 from pathlib import Path
 from os import (
     getcwd,
-    path,
-    getenv,
 )
 from api.server import KscServer
 from utils.config import Config

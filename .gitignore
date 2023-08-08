@@ -1,4 +1,5 @@
 /venv
+/dist
 /python
 /.dev/py-3.11.4-openssl-3.0.2.tgz
 /.env
