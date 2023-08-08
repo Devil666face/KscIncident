@@ -6,7 +6,7 @@ TGZ_NAME="py-3.11.4-openssl-"
 if [ "$SSL"="3.0.2" ]; then
 	TGZ_NAME="$TGZ_NAME$SSL.tgz"
 else
-	TGZ_NAME="$TGZ_NAME1.1.1.tgz"
+	TGZ_NAME=$(echo $TGZ_NAME"1.1.1.tgz")
 fi
 tar -xf .dev/$TGZ_NAME
 ./python/bin/python3.11 -m venv venv
