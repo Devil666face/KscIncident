@@ -2,11 +2,11 @@
 # sudo ln -s /usr/lib/x86_64-linux-gnu/libffi.so.8 /usr/lib/x86_64-linux-gnu/libffi.so.6
 VERSION=$(openssl version)
 SSL=$(echo $VERSION | awk '{print $2}')
-TGZ_NAME="py-3.11.4-openssl-"
+TGZ_NAME=""
 if [ "$SSL"="3.0.2" ]; then
-	TGZ_NAME="$TGZ_NAME$SSL.tgz"
+	TGZ_NAME="py-3.11.4-openssl-3.0.2.tgz"
 else
-	TGZ_NAME+="1.1.1.tgz"
+	TGZ_NAME="py-3.11.4-openssl-1.1.1.tgz"
 fi
 echo $SSL $TGZ_NAME
 tar -xf .dev/$TGZ_NAME
