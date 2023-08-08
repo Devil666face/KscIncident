@@ -9,4 +9,4 @@ pip-install:
 	./venv/bin/pip install -r requirements.txt
 pycln:
 	./venv/bin/pip install pycln
-	pycln --all .
+	./venv/bin/pycln --all .
