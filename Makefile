@@ -7,3 +7,6 @@ run:
 	./venv/bin/python main.py
 pip-install:
 	./venv/bin/pip install -r requirements.txt
+pycln:
+	./venv/bin/pip install pycln
+	pycln --all .

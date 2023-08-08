@@ -6,16 +6,13 @@ from os import (
     getenv,
 )
 from api.server import KscServer
-from dotenv import load_dotenv
+from utils.config import Config
+
 
 BASE_DIR = Path(getcwd()).resolve()
-load_dotenv(path.join(BASE_DIR, ".env"))
-
-IP = getenv("KSC_SERVER_IP", "127.0.0.1")
-USERNAME = getenv("KSC_USERNAME", "")
-PASSWORD = getenv("KSC_PASSWORD", "")
-
 
 if __name__ == "__main__":
-    server = KscServer(ip=IP, username=USERNAME, password=PASSWORD)
-    server.events
+    config = Config(BASE_DIR)
+    for ip, username, password in zip(config.ip, config.username, config.password):
+        server = KscServer(ip, username, password)
+        server.events

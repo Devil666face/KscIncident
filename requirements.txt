@@ -1,5 +1,6 @@
 wheel
 setuptools
 requests
-python-dotenv
+PyYAML
 loguru
+# python-dotenv

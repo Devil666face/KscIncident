@@ -1,0 +1,10 @@
+servers:
+  ip:
+    - '127.0.0.1'
+    - '127.0.1.1'
+  username:
+    - 'username@domain.ru'
+    - 'username@domain.ru'
+  password:
+    - 'pa$$word'
+    - 'pa$$word'
